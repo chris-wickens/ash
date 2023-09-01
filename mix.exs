@@ -140,6 +140,12 @@ defmodule Ash.MixProject do
             name: "Resource Validations",
             type: "Extension",
             target: "Ash.Registry"
+          },
+          %{
+            module: Ash.Reactor,
+            name: "Reactor integration",
+            type: "Extension",
+            target: "Reactor.Dsl"
           }
         ],
         mix_tasks: [
@@ -158,6 +164,7 @@ defmodule Ash.MixProject do
           Ash.DataLayer.Simple,
           Ash.Notifier.PubSub,
           Ash.Policy.Authorizer,
+          Ash.Reactor,
           Ash.Registry,
           Ash.Registry.Dsl,
           Ash.Resource
@@ -289,6 +296,7 @@ defmodule Ash.MixProject do
       {:stream_data, "~> 0.5.0"},
       {:telemetry, "~> 1.1"},
       {:plug, ">= 0.0.0", optional: true},
+      {:reactor, "~> 0.3 and >= 0.3.3", optional: true},
       # Dev/Test dependencies
       {:ex_doc, "~> 0.22", only: [:dev, :test], runtime: false},
       {:ex_check, "~> 0.12.0", only: [:dev, :test]},
@@ -309,7 +317,7 @@ defmodule Ash.MixProject do
       credo: "credo --strict",
       docs: ["docs", "ash.replace_doc_links"],
       "spark.formatter":
-        "spark.formatter --extensions Ash.Resource.Dsl,Ash.Api.Dsl,Ash.Flow.Dsl,Ash.Registry.Dsl,Ash.DataLayer.Ets,Ash.DataLayer.Mnesia,Ash.Notifier.PubSub,Ash.Policy.Authorizer"
+        "spark.formatter --extensions Ash.Resource.Dsl,Ash.Api.Dsl,Ash.Flow.Dsl,Ash.Registry.Dsl,Ash.DataLayer.Ets,Ash.DataLayer.Mnesia,Ash.Notifier.PubSub,Ash.Policy.Authorizer,Ash.Reactor"
     ]
   end
 end
