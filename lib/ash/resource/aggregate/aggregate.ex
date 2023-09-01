@@ -87,7 +87,7 @@ defmodule Ash.Resource.Aggregate do
       type: :boolean,
       default: true,
       doc: """
-      Wether or not the aggregate query should authorize based on the target action.
+      Whether or not the aggregate query should authorize based on the target action.
 
       If you are using filter checks or simple checks that don't depend on arguments on the destination resource, then
       this should be set to `true`. Additionally, you can set `read_action` to a separate action that does have filter checks.

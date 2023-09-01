@@ -68,7 +68,7 @@ defmodule Ash.Resource.Actions.Create do
                   type: :boolean,
                   default: false,
                   doc: """
-                  Wether or not this action is always an upsert.
+                  Whether or not this action is always an upsert.
 
                   If this is false, the action can still be used as an upsert by passing `upsert?: true` when using it.
                   This option forces all uses of this action to be treated as an upsert
